@@ -60,7 +60,7 @@ app.post( '/web-data', async (req, res) => {
       type: 'article',
       id: queryId,
       title: 'Успешная покупка',
-      input_message_content: {message_text: 'Поздравляю с первой покупкой, вы приобрели товар на сумму ' + totalPrice}
+      input_message_content: {message_text: 'Поздравляем с первым свитчем! За 3 часа до конца аренды мы пришлем напоминание в чате. Вы можете оставить вещи еще на сутки или выбрать что-то другое - выбор за вами!'}
     })
     return res.status(200).json({});
   } catch (e) {
