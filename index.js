@@ -20,7 +20,7 @@ bot.setMyCommands( [
 bot.on('message', async (msg) => {
   const chatId = msg.chat.id;
   const text = msg.text;
-  const tg_nickname = msg.from.username;
+  const username = msg.from.username;
 
   const presaleText = `Switch - инновационный способ осознанного потребления и твой ключ к свободному гардеробу.\n
 🌟 Твой гардероб дышит свободой - больше никаких завалов из одежды, которую "когда-нибудь надену"!
@@ -33,16 +33,14 @@ bot.on('message', async (msg) => {
     if(text === '/start') {
 
       try {
-        await UserModel.create({chatId})
+        await UserModel.create({chatId, login: username})
       } catch (e) {}
-
-      const user = await UserModel.findOne({chatId})
-      user.login += tg_nickname;
 
       await bot.sendMessage(chatId, presaleText, {
         reply_markup: {
           keyboard: [
-            ['Как работает Switch?', {text: 'Заполните форму 🗒', web_app: {url: webAppUrl + 'form'}}]
+            ['Как работает Switch?', 'Связаться с нами'],
+            [{text: 'Заполните форму 🗒', web_app: {url: webAppUrl + 'form'}}]
           ],
           resize_keyboard: true
         }
