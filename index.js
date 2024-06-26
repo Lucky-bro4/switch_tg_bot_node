@@ -100,7 +100,7 @@ bot.on('message', async (msg) => {
 
       bot.on('callback_query', msg => {
         const data = msg.data
-        // const {message_id, text} = msg.message
+        // const {message_id, text} = msg.messagegsfsf
         if (data === 'message_to_bot') {
           bot.sendMessage(chatId, 'Записываю ✍️')
           bot.on('message', async mg => {
