@@ -86,7 +86,7 @@ bot.on('message', async (msg) => {
 
       message_to_connect_with = `Если у вас возникли вопросы и/или затруднения в работе с сервисом:\n
 1. Нажав на кнопку "Написать", пришлите сообщение в чат и мы его получим.\n
-2. Написать на почту hello.switch@yandex.ru, ответим максимально оперативно.`
+2. Почта: hello.switch@yandex.ru`
 
       await bot.sendMessage(chatId, message_to_connect_with, {
         reply_markup: {
