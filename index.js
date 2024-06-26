@@ -100,7 +100,7 @@ bot.on('message', async (msg) => {
 
       bot.on('callback_query', msg => {
         const data = msg.data
-        // const {message_id, text} = msg.messagegsfsf
+        // const {message_id, text} = msg.message
         if (data === 'message_to_bot') {
           bot.sendMessage(chatId, 'Записываю ✍️')
           bot.on('message', async mg => {
@@ -188,6 +188,6 @@ app.post( '/web-data', async (req, res) => {
 })
 
 
-const PORT = 8000;
+const PORT = 80;
 
 app.listen(PORT, () => console.log('server started on PORT ' + PORT))
