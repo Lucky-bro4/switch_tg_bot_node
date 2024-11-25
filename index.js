@@ -297,6 +297,18 @@ app.get( '/products', async (req, res) => {
 
 })
 
+app.get( '/allData', async (req, res) => {
+  
+  try {
+    const allProducts = await Item.findAll();
+    res.json(allProducts);
+  } catch (error) {
+    res.status(500).json({ error: 'Ошибка при получении списка всех товаров' });
+  }  
+
+})
+
+
 
 
 app.listen(process.env.PORT, async () => {
